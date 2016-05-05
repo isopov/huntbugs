@@ -26,7 +26,7 @@ import one.util.huntbugs.registry.anno.AssertNoWarning;
  *
  */
 public class TestValuesFlow {
-    @AssertNoWarning(type="*")
+    @AssertNoWarning(type = "*")
     void testForSwitch(Map<Character, Integer> mod) {
         Map<Character, Integer> mapTemp = new Hashtable<>();
         for (Entry<Character, Integer> e : mod.entrySet()) {
@@ -38,6 +38,8 @@ public class TestValuesFlow {
             case 'C':
                 // not implemented
                 continue;
+            default:
+                throw new IllegalStateException();
             }
             mapTemp.put(key, e.getValue());
         }

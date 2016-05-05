@@ -152,6 +152,8 @@ public class TestKnownComparison {
                         continue;
                     System.out.println(x + "1");
                     break;
+                default:
+                    throw new IllegalStateException();
                 }
             }
         }
@@ -270,7 +272,7 @@ public class TestKnownComparison {
             istart = -1;
         }
     }
-    
+
     @AssertNoWarning(type = "*")
     public void testComplexLoop2(String type) {
         int x = -1;
@@ -293,7 +295,7 @@ public class TestKnownComparison {
     public void testAssert(String type) {
         int x = 1;
         assert x > 0 && !type.isEmpty();
-        System.out.println(x+":"+type);
+        System.out.println(x + ":" + type);
     }
 
 }
